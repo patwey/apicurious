@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214211357) do
+ActiveRecord::Schema.define(version: 20151215225534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(version: 20151214211357) do
     t.string   "oauth_token_secret"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "profile_pic"
+    t.string   "banner_pic"
+    t.integer  "followers"
+    t.integer  "following"
+    t.string   "tweets"
   end
 
 end
