@@ -5,7 +5,7 @@ require 'capybara/rails'
 require 'minitest/pride'
 
 class ActiveSupport::TestCase
-  fixtures :all
+  include FactoryGirl::Syntax::Methods
 end
 
 class ActionDispatch::IntegrationTest

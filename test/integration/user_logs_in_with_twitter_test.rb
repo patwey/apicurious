@@ -1,16 +1,36 @@
-require 'test_helper'
+require "test_helper"
 
 class UserLogsInWithTwitterTest < ActionDispatch::IntegrationTest
-  test 'user logs in with twitter' do
-    # As a guest,
-    # When I visit the homepage,
-    # And I click "Log In",
-    # And I allow access,
-    # Then my current page is my profile.
+  def setup
+    stub_omniauth
+  end
 
-    visit '/'
-    click_link 'Log In'
-    # mock omniauth for successful auth
-    assert_equal '/dashboard', current_path
+  def stub_omniauth
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+      provider: "twitter",
+      extra: {
+        raw_info: {
+          user_id: "1234",
+          name: "John Doe",
+          screen_name: "jdoe"
+        }
+      },
+      credentials: {
+        token: "exampletoken",
+        secret: "examplesecrettoken"
+      }
+    })
+  end
+
+  test "user logs in with twitter" do
+    visit "/"
+    click_link "Log In"
+
+    assert_equal "/dashboard", current_path
+    within ".user-info" do
+      assert page.has_css? ".name", "John Doe"
+      assert page.has_css? ".screen-name", "jdoe"
+    end
   end
 end
