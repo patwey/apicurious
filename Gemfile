@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'omniauth-twitter'
 gem 'figaro'
 gem 'factory_girl_rails', '~> 4.0'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'pry'
