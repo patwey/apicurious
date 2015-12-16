@@ -4,8 +4,8 @@ class TwitterServiceTest < ActiveSupport::TestCase
   attr_reader :service
 
   def setup
-    user = OpenStruct.new(access_token: ENV["twitter_access_token"],
-                          access_token_secret: ENV["twitter_access_token_secret"])
+    user = OpenStruct.new(oauth_token: ENV["twitter_access_token"],
+                          oauth_token_secret: ENV["twitter_access_token_secret"])
     @service = TwitterService.new(user)
   end
 
