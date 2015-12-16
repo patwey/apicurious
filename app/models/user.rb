@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
   def home_timeline
     service.home_timeline
   end
+
+  def tweet(text)
+    service.tweet(text)
+  end
 end
