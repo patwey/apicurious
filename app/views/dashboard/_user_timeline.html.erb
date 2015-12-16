@@ -1,0 +1,19 @@
+<div class="user-timeline col-md-7">
+  <ul class="list-group">
+    <% @user.home_timeline.each do |tweet| %>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-1">
+            <img class="profile-image" src="<%= tweet.user.profile_image_uri.to_s %>">
+          </div>
+
+          <div class="col-md-7">
+            <strong><%= tweet.user.name %></strong>
+            <span>@<%= tweet.user.screen_name %></span>
+            <p><%= tweet.text %></p>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

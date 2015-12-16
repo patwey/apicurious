@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  def self.service
+  def service
     TwitterService.new(self)
   end
 

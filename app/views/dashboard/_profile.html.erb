@@ -1,0 +1,39 @@
+<div class="user-info well col-md-3">
+  <div class="row">
+    <div class="col-md-2 col-md-offset-1">
+      <br>
+      <img class="profile-pic" src="<%= @user.profile_pic %>" />
+    </div>
+    <div class="col-md-6 col-md-offset-1">
+      <h3 class="name"><%= @user.name %></h3>
+      <p class="screen-name">@<%= @user.screen_name %></p>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-1">
+      <p class="center-text">Tweets</p>
+    </div>
+
+    <div class="col-md-3">
+      <p class="center-text">Followers</p>
+    </div>
+
+    <div class="col-md-3">
+      <p class="center-text">Following</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 col-md-offset-1">
+      <p class="tweets center-text "><%= @user.tweets %></p>
+    </div>
+
+    <div class="col-md-3">
+      <p class="followers center-text "><%= @user.followers %></p>
+    </div>
+
+    <div class="col-md-3">
+      <p class="following center-text "><%= @user.following %></p>
+    </div>
+  </div>
+</div>
