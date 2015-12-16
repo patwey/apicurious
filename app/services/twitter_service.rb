@@ -7,4 +7,8 @@ class TwitterService
       config.access_token_secret = user.oauth_token_secret
     end
   end
+
+  def home_timeline
+    client.home_timeline
+  end
 end
