@@ -10,15 +10,11 @@
           <div class="col-md-7">
             <strong><%= tweet.user.name %></strong>
             <span>@<%= tweet.user.screen_name %></span>
-            <p><%= tweet.text %></p>
-            <%= form_for :favorite, url: favorites_path, method: :post do %>
-              <%= hidden_field_tag "id", tweet.id %>
-              <button class="btn btn-default navbar-btn" type="submit">
-                <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-              </button>
-            <% end %>
+            <br>
+            <%= tweet.text %>
           </div>
         </div>
+        <%= render partial: "dashboard/favorite_button", locals: { tweet: tweet }%>
       </li>
     <% end %>
   </ul>
