@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
   def tweet(text)
     service.tweet(text)
   end
+
+  def favorite(id)
+    service.favorite(id)
+  end
 end

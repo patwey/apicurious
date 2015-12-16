@@ -17,4 +17,8 @@ class TwitterService
   def tweet(text)
     client.update(text)
   end
+
+  def favorite(id)
+    client.favorite(id)
+  end
 end

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "/dashboard", to: "dashboard#index"
 
   resources :tweets, only: [:new, :create]
+  resources :favorites, only: [:create]
 end
