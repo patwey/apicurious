@@ -18,14 +18,8 @@ class UserTest < ActiveSupport::TestCase
     })
   end
 
-  test "from_omniauth finds existing user with given uid" do
-    skip
-    user = create(:user)
-    assert_equal user, User.from_omniauth(auth_info)
-  end
-
   test "from_omniauth creates user with given uid" do
     user = User.from_omniauth(auth_info)
-    assert_equal user, User.last
+    assert_equal user, User.find_by(uid: user.uid)
   end
 end
