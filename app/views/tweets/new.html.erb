@@ -3,7 +3,7 @@
     <%= form_for :tweet, url: tweets_path, class: "input-group" do |f| %>
       <div class="col-md-8 col-md-offset-2">
         <label for="tweet[text]">New Tweet</label>
-        <%= f.text_area :text, class: "form-control", placeholder: "What's happening?" %>
+        <%= f.text_area :text, class: "form-control", placeholder: "What's happening?", maxlength: 140 %>
         <br>
         <%= f.submit "Submit", class: "btn btn-default" %>
       </div>
