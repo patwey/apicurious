@@ -26,12 +26,17 @@ class User < ActiveRecord::Base
     service.tweet(text)
   end
 
-  def reply(text, id)
-    service.reply(text, id)
+  def reply(text, reply_user, reply_tweet_id)
+    text = format_reply(reply_user, text)
+    service.reply(text, reply_tweet_id)
   end
 
-  def favorite(id)
-    service.favorite(id)
+  def format_reply(reply_user, text)
+    "@#{reply_user} #{text}"
+  end
+
+  def favorite(tweet_id)
+    service.favorite(tweet_id)
   end
 
   def retweet(id)

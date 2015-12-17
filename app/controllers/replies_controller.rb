@@ -5,15 +5,8 @@ class RepliesController < ApplicationController
   end
 
   def create
-    reply = reply_text(params[:screen_name], params[:reply][:text])
-    current_user.reply(reply, params[:id])
+    current_user.reply(params[:screen_name], params[:reply][:text], params[:id])
 
     redirect_to dashboard_path
-  end
-
-  private
-
-  def reply_text(screen_name, text)
-    "@#{screen_name} #{text}"
   end
 end
