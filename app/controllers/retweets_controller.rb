@@ -1,6 +1,5 @@
 class RetweetsController < ApplicationController
   def create
-    binding.pry
     current_user.retweet(params[:id])
 
     redirect_to dashboard_path

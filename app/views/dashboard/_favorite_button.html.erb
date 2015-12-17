@@ -1,8 +1,14 @@
 <div class="col-md-1 col-md-offset-1">
-  <%= form_for :favorite, url: favorites_path, method: :post, class: "align-right" do %>
-    <%= hidden_field_tag "id", tweet.id %>
-    <button class="favorite-button btn btn-default navbar-btn" type="submit">
-      <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+  <% if tweet.favorited? %>
+    <button class="favorite-button btn btn-default navbar-btn">
+      <span class="red glyphicon glyphicon-heart" aria-hidden="true"></span>
     </button>
+  <% else %>
+    <%= form_for :favorite, url: favorites_path, method: :post, class: "align-right" do %>
+      <%= hidden_field_tag "id", tweet.id %>
+      <button class="favorite-button btn btn-default navbar-btn" type="submit">
+        <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+      </button>
+    <% end %>
   <% end %>
 </div>
