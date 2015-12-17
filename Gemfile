@@ -23,6 +23,9 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'mocha'
+  gem 'figaro'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do

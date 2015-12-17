@@ -7,19 +7,16 @@ class UserSeesBasicProfileInfoTest < ActionDispatch::IntegrationTest
   end
 
   test "user sees basic profile information" do
-    # As a user,
-    # When I log in with twitter,
-    # Then my current path is '/dashboard',
-    # And I am able to see my profile picture, background picture, tweets, follower count, following count, and followers
+    VCR.use_cassette("twitter_service#home_timeline") do
+      visit "/dashboard"
 
-    visit "/dashboard"
-
-    within ".user-info" do
-      assert page.has_css? ".name", "John Doe"
-      assert page.has_css? ".screen-name", "jdoe"
-      assert page.has_css? ".tweets", "150"
-      assert page.has_css? ".followers", "50"
-      assert page.has_css? ".following", "100"
+      within ".user-info" do
+        assert page.has_css? ".name", "John Doe"
+        assert page.has_css? ".screen-name", "jdoe"
+        assert page.has_css? ".tweets", "150"
+        assert page.has_css? ".followers", "50"
+        assert page.has_css? ".following", "100"
+      end
     end
   end
 end
