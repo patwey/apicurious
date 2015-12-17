@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.update_profile(auth_info)
+    user.update do |user|
+  end
+
   def home_timeline
     service.home_timeline
   end
