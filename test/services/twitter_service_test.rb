@@ -18,4 +18,13 @@ class TwitterServiceTest < ActiveSupport::TestCase
       assert_equal "IRC Intl Rescue Comm", tweet.user.name
     end
   end
+
+  test "#tweet" do
+    VCR.use_cassette("twitter_service#tweet") do
+      tweet_msg = "My tweet"
+      tweet = service.tweet(tweet_msg)
+
+      assert_equal "My tweet", tweet.text
+    end
+  end
 end
