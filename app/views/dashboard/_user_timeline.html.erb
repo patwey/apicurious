@@ -14,7 +14,10 @@
             <%= tweet.text %>
           </div>
         </div>
-        <%= render partial: "dashboard/favorite_button", locals: { tweet: tweet }%>
+        <div class="row">
+          <%= render partial: "dashboard/favorite_button", locals: { tweet: tweet }%>
+          <%= render partial: "dashboard/retweet_button", locals: {tweet: tweet } %>
+        </div>
       </li>
     <% end %>
   </ul>

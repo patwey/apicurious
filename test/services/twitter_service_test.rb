@@ -28,6 +28,15 @@ class TwitterServiceTest < ActiveSupport::TestCase
     end
   end
 
+  test "#retweet" do
+    VCR.use_cassette("twitter_service#retweet") do
+      tweet_id = 677285650354339841
+      retweet = service.retweet(tweet_id).first
+
+      assert_equal "patwey", retweet.user.screen_name
+    end
+  end
+
   test "#favorite" do
     VCR.use_cassette("twitter_service#favorite") do
       tweet_id = 677285650354339841

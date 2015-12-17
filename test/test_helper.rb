@@ -22,6 +22,10 @@ end
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
 
+  def teardown
+    reset_session!
+  end
+
   def stub_omniauth
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({

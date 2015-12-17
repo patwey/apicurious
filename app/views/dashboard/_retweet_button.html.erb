@@ -1,0 +1,8 @@
+<div class="col-md-1">
+  <%= form_for :retweet, url: retweets_path, method: :post, class: "align-right" do %>
+    <%= hidden_field_tag "id", tweet.id %>
+    <button class="action-button btn btn-default navbar-btn" type="submit">
+      <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span>
+    </button>
+  <% end %>
+</div>

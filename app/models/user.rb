@@ -29,4 +29,8 @@ class User < ActiveRecord::Base
   def favorite(id)
     service.favorite(id)
   end
+
+  def retweet(id)
+    service.retweet(id)
+  end
 end

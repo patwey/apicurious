@@ -18,6 +18,10 @@ class TwitterService
     client.update(text)
   end
 
+  def retweet(id)
+    client.retweet(id)
+  end
+
   def favorite(id)
     client.favorite(id)
   end
