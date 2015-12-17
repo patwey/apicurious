@@ -27,4 +27,13 @@ class TwitterServiceTest < ActiveSupport::TestCase
       assert_equal "My tweet", tweet.text
     end
   end
+
+  test "#favorite" do
+    VCR.use_cassette("twitter_service#favorite") do
+      tweet_id = 677285650354339841
+      favorite = service.favorite(tweet_id).first
+
+      assert_equal 677285650354339841, favorite.id
+    end
+  end
 end
