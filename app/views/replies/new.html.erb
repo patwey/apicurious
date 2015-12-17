@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <%= form_for :reply, url: replies_path, class: "input-group" do |f| %>
+      <div class="col-md-8 col-md-offset-2">
+        <label for="tweet[text]"><%= "Reply to @#{@reply_to_screenname}" %></label>
+        <%= f.text_area :text, class: "form-control", placeholder: "What's happening?", maxlength: 140 %>
+        <%= hidden_field_tag "id", @reply_to_id %>
+        <%= hidden_field_tag "screen_name", @reply_to_screenname %>
+        <br>
+        <%= f.submit "Submit", class: "btn btn-default" %>
+      </div>
+    <% end %>
+  </div>
+</div>

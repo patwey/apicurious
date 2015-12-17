@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
     service.tweet(text)
   end
 
+  def reply(text, id)
+    service.reply(text, id)
+  end
+
   def favorite(id)
     service.favorite(id)
   end

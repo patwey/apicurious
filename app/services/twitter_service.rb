@@ -18,6 +18,10 @@ class TwitterService
     client.update(text)
   end
 
+  def reply(text, id)
+    client.update(text, in_reply_to_status_id: id)
+  end
+
   def retweet(id)
     client.retweet(id)
   end
