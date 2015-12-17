@@ -2,7 +2,7 @@
   <%= form_for :reply, url: new_reply_path, class: "align-right" do %>
     <%= hidden_field_tag "id", tweet.id %>
     <%= hidden_field_tag "screen_name", tweet.user.screen_name %>
-    <button class="action-button btn btn-default navbar-btn" type="submit">
+    <button class="reply-button btn btn-default navbar-btn" type="submit">
       <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
     </button>
   <% end %>

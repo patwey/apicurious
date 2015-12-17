@@ -1,7 +1,7 @@
 <div class="col-md-1 col-md-offset-1">
   <%= form_for :favorite, url: favorites_path, method: :post, class: "align-right" do %>
     <%= hidden_field_tag "id", tweet.id %>
-    <button class="action-button btn btn-default navbar-btn" type="submit">
+    <button class="favorite-button btn btn-default navbar-btn" type="submit">
       <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
     </button>
   <% end %>

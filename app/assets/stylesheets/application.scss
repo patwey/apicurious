@@ -24,16 +24,42 @@ body { padding-top: 70px; }
   padding-top: 10%;
 }
 
-.action-button {
+.retweet-button {
   color: gray;
   background: transparent;
   border: none;
   padding: 0;
 }
 
+.retweet-button:hover {
+  color: green;
+}
+
+.favorite-button {
+  color: gray;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.favorite-button:hover {
+  color: red;
+}
+
+.reply-button {
+  color: gray;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.reply-button:hover {
+  color: #000066;
+}
+
 .brand-logo {
   position: absolute;
   left: 50%;
-  margin-left: -50px !important;  /* 50% of your logo width */
+  margin-left: -50px !important;
   display: block;
 }
