@@ -15,7 +15,7 @@ class TwitterServiceTest < ActiveSupport::TestCase
       tweet = home_timeline.first
 
       assert_equal 20, home_timeline.count
-      assert_equal "The Week", tweet.user.name
+      assert_equal "IRC Intl Rescue Comm", tweet.user.name
     end
   end
 end
