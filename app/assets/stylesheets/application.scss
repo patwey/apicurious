@@ -30,3 +30,10 @@ body { padding-top: 70px; }
   border: none;
   padding: 0;
 }
+
+.brand-logo {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px !important;  /* 50% of your logo width */
+  display: block;
+}
