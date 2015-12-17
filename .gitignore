@@ -20,3 +20,6 @@
 
 # Ignore SimpleCov coverage
 coverage
+
+# Ignore Mac .DS_Store
+.DS_Store
