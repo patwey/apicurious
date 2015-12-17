@@ -23,9 +23,9 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'mocha'
-  gem 'figaro'
   gem 'webmock'
   gem 'vcr'
+  gem 'simplecov', require: false
 end
 
 group :development do
