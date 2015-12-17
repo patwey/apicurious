@@ -8,7 +8,7 @@ FactoryGirl.define do
     tweets "150"
     followers "50"
     following "100"
-    oauth_token "exampletoken"
-    oauth_token_secret "examplesecrettoken"
+    oauth_token ENV["twitter_access_token"]
+    oauth_token_secret ENV["twitter_access_token_secret"]
   end
 end
